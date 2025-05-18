@@ -10,7 +10,9 @@
 <%@ page import="model.Actividad" %>
 <%@ page import="dao.ActividadDAO" %>
 <html>
-<head><title>Actividades</title></head>
+<head>
+    <title>Actividades</title>
+</head>
 <body>
 <h2>Listado de Actividades</h2>
 <a href="registrarActividad.jsp">+ Nueva Actividad</a><br><br>

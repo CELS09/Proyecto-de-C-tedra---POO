@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="java.util.List" %>
-<%@ page import="java.model.Asignacion" %>
+<%@ page import="model.Asignacion" %>
 <%@ page import="dao.AsignacionDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
