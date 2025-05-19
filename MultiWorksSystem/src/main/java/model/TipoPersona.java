@@ -1,4 +1,6 @@
 package model;
 
-public class TipoPersona {
+public enum TipoPersona {
+    EMPLEADO,
+    CLIENTE
 }

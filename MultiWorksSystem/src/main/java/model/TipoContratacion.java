@@ -1,4 +1,7 @@
 package model;
 
-public class TipoContratacion {
+public enum TipoContratacion {
+    TIEMPO_COMPLETO,
+    POR_PROYECTO,
+    TEMPORAL
 }
