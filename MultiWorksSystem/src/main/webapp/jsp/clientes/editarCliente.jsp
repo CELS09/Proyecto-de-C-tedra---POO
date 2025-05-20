@@ -85,7 +85,7 @@
 
         <!--<label>Tipo de Persona:</label>
         <select name="tipoPersona">
-            <option value="CLIENTE" <%= cliente.getTipoPersona() == TipoPersona.CLIENTE ? "selected" : "" %>>CLIENTE</option>
+            <option value="CLIENTE" <%--<%= cliente.getTipoPersona() == TipoPersona.CLIENTE ? "selected" : "" %>--%>>Cliente</option>
         </select>-->
 
         <label>Tipo de Contratación:</label>
