@@ -77,40 +77,40 @@
         <label for="contrasena">Contraseña:</label>
         <input type="password" id="contrasena" name="contrasena" required>
 
-        <label for="tipoPersona">Tipo de Persona:</label>
-        <select id="tipoPersona" name="tipoPersona">
-            <option value="EMPLEADO">EMPLEADO</option>
-        </select>
+        <!--<label for="tipoPersona">Tipo de Persona:</label>
+       <select id="tipoPersona" name="tipoPersona">
+           <option value="EMPLEADO">Empleado</option>
+       </select>-->
 
-        <label for="tipoContratacion">Tipo de Contratación:</label>
-        <select id="tipoContratacion" name="tipoContratacion">
-            <option value="TIEMPO_COMPLETO">Tiempo Completo</option>
-            <option value="POR_PROYECTO">Por Proyecto</option>
-            <option value="TEMPORAL">Temporal</option>
-        </select>
+       <label for="tipoContratacion">Tipo de Contratación:</label>
+       <select id="tipoContratacion" name="tipoContratacion">
+           <option value="TIEMPO_COMPLETO">Tiempo Completo</option>
+           <option value="POR_PROYECTO">Por Proyecto</option>
+           <option value="TEMPORAL">Temporal</option>
+       </select>
 
-        <label for="telefono">Teléfono:</label>
-        <input type="text" id="telefono" name="telefono">
+       <label for="telefono">Teléfono:</label>
+       <input type="text" id="telefono" name="telefono">
 
-        <label for="correo">Correo electrónico:</label>
-        <input type="email" id="correo" name="correo">
+       <label for="correo">Correo electrónico:</label>
+       <input type="email" id="correo" name="correo">
 
-        <label for="direccion">Dirección:</label>
-        <input type="text" id="direccion" name="direccion">
+       <label for="direccion">Dirección:</label>
+       <input type="text" id="direccion" name="direccion">
 
-        <label for="estado">Estado:</label>
-        <select id="estado" name="estado">
-            <option value="ACTIVO">ACTIVO</option>
-            <option value="INACTIVO">INACTIVO</option>
-        </select>
+       <label for="estado">Estado:</label>
+       <select id="estado" name="estado">
+           <option value="ACTIVO">ACTIVO</option>
+           <option value="INACTIVO">INACTIVO</option>
+       </select>
 
-        <label for="creadoPor">Creado por (usuario):</label>
-        <input type="text" id="creadoPor" name="creadoPor" required>
+       <label for="creadoPor">Creado por (usuario):</label>
+       <input type="text" id="creadoPor" name="creadoPor" required>
 
-        <input type="submit" value="Guardar Empleado">
-    </form>
+       <input type="submit" value="Guardar Empleado">
+   </form>
 
-    <a href="listarEmpleados.jsp">← Ver lista de empleados</a>
+   <a href="listarEmpleados.jsp">← Ver lista de empleados</a>
 </div>
 
 </body>

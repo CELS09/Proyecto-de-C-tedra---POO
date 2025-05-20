@@ -5,6 +5,7 @@
       <map>
         <entry key="file://$PROJECT_DIR$/MultiWorksSystem/src/main/webapp/jsp/actividades/listarActividades.jsp" value="file://$PROJECT_DIR$/MultiWorksSystem/src/main/webapp/jsp/actividades" />
         <entry key="file://$PROJECT_DIR$/MultiWorksSystem/src/main/webapp/jsp/asignaciones/listarAsignaciones.jsp" value="file://$PROJECT_DIR$/MultiWorksSystem/src/main/webapp/jsp/asignaciones" />
+        <entry key="file://$PROJECT_DIR$/MultiWorksSystem/src/main/webapp/jsp/clientes/registrarCliente.jsp" value="file://$PROJECT_DIR$/MultiWorksSystem/src/main/webapp/jsp/clientes" />
         <entry key="file://$PROJECT_DIR$/MultiWorksSystem/src/main/webapp/jsp/login.jsp" value="file://$PROJECT_DIR$/MultiWorksSystem/src/main/webapp/jsp" />
       </map>
     </option>
