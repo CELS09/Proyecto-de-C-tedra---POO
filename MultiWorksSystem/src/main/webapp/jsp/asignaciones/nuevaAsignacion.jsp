@@ -76,7 +76,7 @@
         <input type="submit" value="Guardar Asignación">
     </form>
 
-    <a href="listarAsignaciones.jsp">← Ver todas las asignaciones</a>
+    <a href="listarAsignaciones.jsp">Ver todas las asignaciones →</a>
 </div>
 
 </body>

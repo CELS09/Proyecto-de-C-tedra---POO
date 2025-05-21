@@ -32,31 +32,36 @@ public class CotizacionServlet extends HttpServlet {
 
     private void registrarCotizacion(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
-        Cotizacion cotizacion = extraerCotizacionDesdeRequest(request);
+        Cotizacion cotizacion = extraerCotizacionDesdeRequest(request, false);
         dao.insertar(cotizacion);
         response.sendRedirect("jsp/cotizaciones/listarCotizaciones.jsp");
     }
 
     private void actualizarCotizacion(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
-        Cotizacion cotizacion = extraerCotizacionDesdeRequest(request);
+        Cotizacion cotizacion = extraerCotizacionDesdeRequest(request, true);
         dao.actualizar(cotizacion);
         response.sendRedirect("jsp/cotizaciones/listarCotizaciones.jsp");
     }
 
-    private Cotizacion extraerCotizacionDesdeRequest(HttpServletRequest request) {
+    private Cotizacion extraerCotizacionDesdeRequest(HttpServletRequest request, boolean incluirId) {
         try {
-            int idCotizacion = Integer.parseInt(request.getParameter("idCotizacion"));
-            String nombreCliente = request.getParameter("nombreCliente");
-            int cantidadHoras = Integer.parseInt(request.getParameter("cantidadHorasProyecto"));
-            Date fechaInicio = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("fechaTentativaInicio"));
-            Date fechaFin = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("fechaTentativaFin"));
-            double costoAsignaciones = Double.parseDouble(request.getParameter("costoAsignaciones"));
-            double costoAdicionales = Double.parseDouble(request.getParameter("costoAdicionales"));
-            double total = Double.parseDouble(request.getParameter("total"));
+            Cotizacion c = new Cotizacion();
 
-            return new Cotizacion(idCotizacion, nombreCliente, cantidadHoras, fechaInicio, fechaFin,
-                    costoAsignaciones, costoAdicionales, total);
+            if (incluirId) {
+                int id = Integer.parseInt(request.getParameter("idCotizacion"));
+                c.setIdCotizacion(id);
+            }
+
+            c.setNombreCliente(request.getParameter("nombreCliente"));
+            c.setCantidadHorasProyecto(Integer.parseInt(request.getParameter("cantidadHorasProyecto")));
+            c.setFechaTentativaInicio(new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("fechaTentativaInicio")));
+            c.setFechaTentativaFin(new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("fechaTentativaFin")));
+            c.setCostoAsignaciones(Double.parseDouble(request.getParameter("costoAsignaciones")));
+            c.setCostoAdicionales(Double.parseDouble(request.getParameter("costoAdicionales")));
+            c.setTotal(Double.parseDouble(request.getParameter("total")));
+
+            return c;
 
         } catch (Exception e) {
             e.printStackTrace();

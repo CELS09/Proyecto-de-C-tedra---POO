@@ -10,22 +10,21 @@ import java.util.List;
 
 public class CotizacionDAO {
 
-    // Crear nueva cotización
+    // Insertar cotización SIN incluir el ID (la BD lo genera automáticamente)
     public void insertar(Cotizacion c) {
-        String sql = "INSERT INTO cotizaciones (idCotizacion, nombreCliente, cantidadHorasProyecto, fechaTentativaInicio, fechaTentativaFin, costoAsignaciones, costoAdicionales, total) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO cotizaciones (nombreCliente, cantidadHorasProyecto, fechaTentativaInicio, fechaTentativaFin, costoAsignaciones, costoAdicionales, total) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection con = DBConnection.getConnection();
              PreparedStatement stmt = con.prepareStatement(sql)) {
 
-            stmt.setInt(1, c.getIdCotizacion());
-            stmt.setString(2, c.getNombreCliente());
-            stmt.setInt(3, c.getCantidadHorasProyecto());
-            stmt.setDate(4, new java.sql.Date(c.getFechaTentativaInicio().getTime()));
-            stmt.setDate(5, new java.sql.Date(c.getFechaTentativaFin().getTime()));
-            stmt.setDouble(6, c.getCostoAsignaciones());
-            stmt.setDouble(7, c.getCostoAdicionales());
-            stmt.setDouble(8, c.getTotal());
+            stmt.setString(1, c.getNombreCliente());
+            stmt.setInt(2, c.getCantidadHorasProyecto());
+            stmt.setDate(3, new java.sql.Date(c.getFechaTentativaInicio().getTime()));
+            stmt.setDate(4, new java.sql.Date(c.getFechaTentativaFin().getTime()));
+            stmt.setDouble(5, c.getCostoAsignaciones());
+            stmt.setDouble(6, c.getCostoAdicionales());
+            stmt.setDouble(7, c.getTotal());
 
             stmt.executeUpdate();
 
@@ -53,7 +52,6 @@ public class CotizacionDAO {
                 c.setCostoAsignaciones(rs.getDouble("costoAsignaciones"));
                 c.setCostoAdicionales(rs.getDouble("costoAdicionales"));
                 c.setTotal(rs.getDouble("total"));
-
                 lista.add(c);
             }
 
