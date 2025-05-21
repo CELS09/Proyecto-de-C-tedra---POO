@@ -10,6 +10,15 @@
 <%@ page import="model.TipoPersona" %>
 <%@ page import="model.TipoContratacion" %>
 <%@ page import="model.Estado" %>
+<%@ page session="true" %>
+<%
+    // Verificar si hay sesión activa
+    String usuario = (String) session.getAttribute("usuarioAdmin");
+    if (usuario == null) {
+        response.sendRedirect("../../jsp/login.jsp"); // Si no hay sesión, redirige al login
+        return;
+    }
+%>
 <%
     Cliente cliente = (Cliente) request.getAttribute("cliente");
     if (cliente == null) {

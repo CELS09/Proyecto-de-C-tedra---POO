@@ -9,6 +9,14 @@
 <%@ page import="model.Asignacion" %>
 <%@ page import="dao.AsignacionDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page session="true" %>
+<%
+    String usuario = (String) session.getAttribute("usuarioAdmin");
+    if (usuario == null) {
+        response.sendRedirect("../../jsp/login.jsp");
+        return;
+    }
+%>
 <html>
 <head>
     <title>Asignaciones Registradas</title>

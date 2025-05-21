@@ -6,6 +6,14 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page session="true" %>
+<%
+    String usuario = (String) session.getAttribute("usuarioAdmin");
+    if (usuario == null) {
+        response.sendRedirect("../../jsp/login.jsp"); // Si no hay sesión, redirige al login
+        return;
+    }
+%>
 <html>
 <head>
     <title>Registrar Cliente</title>

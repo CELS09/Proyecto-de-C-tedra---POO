@@ -10,6 +10,14 @@
 <%@ page import="model.TipoPersona" %>
 <%@ page import="model.TipoContratacion" %>
 <%@ page import="model.Estado" %>
+<%@ page session="true" %>
+<%
+    String usuario = (String) session.getAttribute("usuarioAdmin");
+    if (usuario == null) {
+        response.sendRedirect("../../jsp/login.jsp");
+        return;
+    }
+%>
 <%
     Empleado emp = (Empleado) request.getAttribute("empleado");
     if (emp == null) {

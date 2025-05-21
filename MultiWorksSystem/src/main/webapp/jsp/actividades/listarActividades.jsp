@@ -9,6 +9,14 @@
 <%@ page import="java.util.List" %>
 <%@ page import="model.Actividad" %>
 <%@ page import="dao.ActividadDAO" %>
+<%@ page session="true" %>
+<%
+    String usuario = (String) session.getAttribute("usuarioAdmin");
+    if (usuario == null) {
+        response.sendRedirect("../../jsp/login.jsp");
+        return;
+    }
+%>
 <html>
 <head>
     <title>Actividades</title>
