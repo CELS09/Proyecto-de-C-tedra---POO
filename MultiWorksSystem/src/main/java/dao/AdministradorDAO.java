@@ -2,17 +2,17 @@ package dao;
 
 import model.Administrador;
 import util.DBConnection;
-import org.mindrot.jbcrypt.BCrypt;
+import util.SeguridadUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-// DAO para manejo de autenticación del Administrador (Solo existe un Administrador en el Sistema)
+// DAO para manejo de autenticación del administrador (Solo existe un administrador en el Sistema)
 public class AdministradorDAO {
 
     /**
-     * Valida las credenciales ingresadas usando BCrypt
+     * Valida las credenciales ingresadas usando SeguridadUtil (BCrypt)
      * @param usuario nombre de usuario ingresado
      * @param contrasenaIngresada contraseña en texto plano ingresada
      * @return true si las credenciales son válidas, false en caso contrario
@@ -27,7 +27,7 @@ public class AdministradorDAO {
 
             if (rs.next()) {
                 String hashGuardado = rs.getString("contrasenaAdmin");
-                return BCrypt.checkpw(contrasenaIngresada, hashGuardado);
+                return SeguridadUtil.verificarPassword(contrasenaIngresada, hashGuardado);
             }
 
         } catch (Exception e) {
@@ -56,7 +56,7 @@ public class AdministradorDAO {
                 admin = new Administrador();
                 admin.setIdAdministrador(rs.getInt("idAdministrador"));
                 admin.setUsuarioAdmin(rs.getString("usuarioAdmin"));
-                admin.setContrasenaAdmin(rs.getString("contrasenaAdmin")); // solo si se requiere
+                admin.setContrasenaAdmin(rs.getString("contrasenaAdmin")); // opcional
             }
 
         } catch (Exception e) {
