@@ -8,7 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-// DAO para manejo de autenticación del administrador (Solo existe un administrador en el Sistema)
+// DAO para manejo de autenticación del Administrador (Solo existe un Administrador en el Sistema)
 public class AdministradorDAO {
 
     /**
