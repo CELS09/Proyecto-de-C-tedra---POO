@@ -61,7 +61,7 @@
     <% } %>
 
     <form action="<%= request.getContextPath() %>/login" method="post">
-        <label for="usuario">Usuario:</label>
+    <label for="usuario">Usuario:</label>
         <input type="text" id="usuario" name="usuario" required>
 
         <label for="contrasena">Contraseña:</label>
