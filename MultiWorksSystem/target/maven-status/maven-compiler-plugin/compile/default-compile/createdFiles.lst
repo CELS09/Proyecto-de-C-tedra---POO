@@ -7,6 +7,7 @@ controller\ClienteServlet.class
 model\Cliente.class
 dao\ClienteDAO.class
 model\Estado.class
+util\TestConexion.class
 model\Cotizacion.class
 controller\LoginServlet.class
 dao\ActividadDAO.class
